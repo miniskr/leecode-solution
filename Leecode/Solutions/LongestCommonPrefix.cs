@@ -1,76 +1,26 @@
 ﻿using System.Collections.Generic;
+using System;
+using System.Text;
 
 namespace Leecode.Solutions
 {
     public static class LongestCommonPrefix
     {
-        public static string LongestCommonPrefixFun(string[] strs)
+        public static string LongestCommonPrefixFun1(string[] strs)
         {
-            if (strs == null || strs.Length == 0)
-                return "";
+            if (strs == null || strs.Length == 0) return "";
 
-            //! 找出最短字符串
-            var shortestStr = new char[] { };
-            var shortestLenth = 0;
-            var commonChar = new List<char>();
+            string prefix = strs[0];
 
-            foreach (var str in strs)
+            for (int i = 1; i < strs.Length; i++)
             {
-                var arr = str.ToCharArray();
-                var len = str.Length;
-
-                if (str == "")
+                while (strs[i].IndexOf(prefix) != 0)
                 {
-                    shortestStr = arr;
-                    shortestLenth = len;
-                    break;
-                }
-
-                if (shortestLenth == 0)
-                {
-                    shortestStr = arr;
-                    shortestLenth = len;
-                }
-                else
-                {
-                    if (shortestLenth > len)
-                    {
-                        shortestStr = arr;
-                        shortestLenth = len;
-                    }
+                    prefix = prefix.Substring(0, prefix.Length - 1);
+                    if (string.IsNullOrWhiteSpace(prefix)) return "";
                 }
             }
-
-            if (shortestLenth == 0)
-                return "";
-
-            var br = true;
-            for (var i = 0; i < shortestLenth; ++i)
-            {
-                var testChar = shortestStr[i];
-                var bl = true;
-
-                while (bl)
-                {
-                    foreach (var str in strs)
-                    {
-                        if (str[i] != testChar)
-                        {
-                            bl = false;
-                            br = false;
-                            break;
-                        }
-                    }
-                    if (bl)
-                        commonChar.Add(testChar);
-
-                    bl = false;
-                }
-                if (!br)
-                    break;
-
-            }
-            return new string(commonChar.ToArray());
+            return prefix;
         }
     }
 }

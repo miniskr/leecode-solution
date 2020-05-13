@@ -16,13 +16,13 @@ namespace Leecode.Text
             var arr5 = new string[] { "abab", "aba", "" };
             var arr6 = new string[] { "aca", "cba" };
 
-            var prefix = LongestCommonPrefix.LongestCommonPrefixFun(arr);
-            var prefix1 = LongestCommonPrefix.LongestCommonPrefixFun(arr1);
-            var prefix2 = LongestCommonPrefix.LongestCommonPrefixFun(arr2);
-            var prefix3 = LongestCommonPrefix.LongestCommonPrefixFun(arr3);
-            var prefix4 = LongestCommonPrefix.LongestCommonPrefixFun(arr4);
-            var prefix5 = LongestCommonPrefix.LongestCommonPrefixFun(arr5);
-            var prefix6 = LongestCommonPrefix.LongestCommonPrefixFun(arr6);
+            var prefix = LongestCommonPrefix.LongestCommonPrefixFun1(arr);
+            var prefix1 = LongestCommonPrefix.LongestCommonPrefixFun1(arr1);
+            var prefix2 = LongestCommonPrefix.LongestCommonPrefixFun1(arr2);
+            var prefix3 = LongestCommonPrefix.LongestCommonPrefixFun1(arr3);
+            var prefix4 = LongestCommonPrefix.LongestCommonPrefixFun1(arr4);
+            var prefix5 = LongestCommonPrefix.LongestCommonPrefixFun1(arr5);
+            var prefix6 = LongestCommonPrefix.LongestCommonPrefixFun1(arr6);
 
             Assert.Equal("", prefix);
             Assert.Equal("fl", prefix1);

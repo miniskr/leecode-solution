@@ -261,4 +261,5 @@ __pycache__/
 *.pyc
 
 # obj
-lecoode/obj/
+Leecode/obj/
+.vs/
