@@ -7,7 +7,7 @@ namespace Leecode
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            Console.WriteLine("123".ToCharArray().ToString());
+            Console.WriteLine(3 ^ 2);
             Console.ReadLine();
         }
     }
